@@ -1,0 +1,5 @@
+{
+  "name": "배포 정심작업장 임가공관리",
+  "description": "A comprehensive sales management system for Jeongsim Workshop, featuring client management, quotations, transaction statements, and AI-powered sales analysis using Gemini.",
+  "requestFramePermissions": []
+}
