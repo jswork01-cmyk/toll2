@@ -258,12 +258,12 @@ function doPost(e) {
             
             {showScriptGuide && (
                 <div className="mt-4 p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-4 animate-fadeIn">
-                    261| <ol className="list-decimal list-inside text-sm text-slate-700 space-y-2">
-                           <li>구글 시트 메뉴에서 <b>[확장 프로그램] {">"} [Apps Script]</b>를 클릭하세요.</li>
-                           <li>아래 버튼을 로그 코드로 복사한 뒤, 파일 편집기에 저장하세요.</li>
-                           <li>상단 <b>[배포] {">"} [새 배포]</b>를 선택합니다.</li>
-                           <li>유형은 <b>[웹 앱]</b>, 액세스 권한은 <b>[모든 사용자]</b>로 설정하여 배포합니다.</li>
-                           <li>생성하신 <b>웹 앱 URL</b>을 복사하여 아래 입력창에 등록하세요.</li>
+                    <ol className="list-decimal list-inside text-sm text-slate-700 space-y-2">
+                        <li>구글 시트 메뉴에서 <b>[확장 프로그램] > [Apps Script]</b>를 클릭합니다.</li>
+                        <li>아래 버튼을 눌러 코드를 복사한 뒤, 스크립트 편집기에 붙여넣으세요.</li>
+                        <li>상단 <b>[배포] > [새 배포]</b>를 선택합니다.</li>
+                        <li>유형은 <b>[웹 앱]</b>, 액세스 권한은 <b>[모든 사용자]</b>로 설정하여 배포합니다.</li>
+                        <li>생성된 <b>웹 앱 URL</b>을 복사하여 아래 입력창에 넣으세요.</li>
                     </ol>
                     <button 
                         onClick={copyScriptCode}
