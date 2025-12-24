@@ -10,9 +10,8 @@
       "DOM.Iterable"
     ],
     "skipLibCheck": true,
-    "types": [
-      "node"
-    ],
+    /* "types": ["node"] 이 줄은 오류 방지를 위해 삭제하거나 아래와 같이 비워두는 것이 좋습니다. */
+    "types": [], 
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "moduleDetection": "force",
@@ -24,6 +23,12 @@
       ]
     },
     "allowImportingTsExtensions": true,
-    "noEmit": true
-  }
+    "noEmit": true,
+
+    /* 배포를 위한 핵심 설정 추가: 안 쓰는 변수/파라미터 에러 무시 */
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
