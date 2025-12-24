@@ -1,22 +1,17 @@
 
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    alias: {
-      // react-is 경로 문제를 직접 해결합니다.
-      'react-is': 'react-is',
-    },
+  base: './',
+  // 빌드 시점에 환경 변수를 주입하여 process.env.API_KEY를 전역에서 사용할 수 있게 합니다.
+  define: {
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY || '')
   },
   build: {
-    rollupOptions: {
-      external: [],
-    },
-    commonjsOptions: {
-      // Recharts 내부의 react-is 모듈을 Vite가 잘 처리하도록 돕습니다.
-      include: [/react-is/, /node_modules/],
-    },
-  },
-})
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false
+  }
+});
