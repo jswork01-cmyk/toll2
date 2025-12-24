@@ -5,27 +5,19 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      // react-is를 패키지 이름으로 명시적으로 매핑
-      'react-is': 'react-is',
+      // @ 기호를 사용 중이라면 경로를 맞춰줍니다.
+      '@': '/src',
     },
   },
   build: {
+    // 404 에러 방지: 빌드 결과물이 상대 경로를 참조하도록 설정
+    assetsDir: 'assets',
     rollupOptions: {
-      // 1. 에러 메시지 지시대로 빌드 과정에서 react-is를 제외(external)시킵니다.
-      external: ['react-is'],
-      output: {
-        globals: {
-          'react-is': 'ReactIs',
-        },
-      },
+      // external 설정을 완전히 삭제했습니다.
     },
-    // 2. 외부 모듈 처리 방식 설정
     commonjsOptions: {
-      include: [/node_modules/],
+      // Recharts의 의존성인 react-is를 강제로 포함시킵니다.
+      include: [/react-is/, /node_modules/],
     },
-  },
-  // 3. 의존성 최적화 대상에 명시적으로 추가
-  optimizeDeps: {
-    include: ['react-is', 'recharts'],
   },
 });
